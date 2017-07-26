@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package api;
+
+service PolygonServer {
+    rpc Create(CreateRequest) returns (CreateReply) {}
+    rpc Get(GetRequest) returns (GetReply) {}
+    rpc Attach(stream StreamChunk) returns (stream StreamChunk) {}
+    rpc CancelStand(CancelRequest) returns (CancelReply) {}
+}
+
+message CreateRequest {
+    string template_id = 1;    
+}
+
+message CreateReply {
+    Stand stand = 1;
+}
+
+message Stand {
+    string id = 1;
+}
+
+message GetRequest {
+    string stand_id = 1;
+}
+
+message GetReply {
+    Stand stand = 1;
+}
+
+message StreamChunk {
+    bytes chunk = 1;
+}
+
+message CancelRequest {
+    string stand_id = 1;
+};
+
+message CancelReply {
+};
