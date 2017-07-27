@@ -1,0 +1,9 @@
+{
+	"Ulimits": [
+		{
+			"Name": "nofile",
+			"Soft": 64,
+			"Hard": 65536
+		}
+	]
+}

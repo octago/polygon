@@ -31,6 +31,7 @@ message GetReply {
 
 message StreamChunk {
     bytes chunk = 1;
+    string stand_id = 2;
 }
 
 message CancelRequest {
